@@ -2,13 +2,23 @@ package multimediaAudioeVideo;
 
 
 public class Audio {
-    protected final int duration;
+
     protected String mediaTitle;
     protected int volume = 3; // imposto un volume di default
+    private int duration;
 
     public Audio(String mediaTitle, int duration) {
         this.mediaTitle = mediaTitle;
+
+    }
+
+    public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    // Metodo setter per il titolo
+    public void setTitle(String title) {
+        this.mediaTitle = title;
     }
 
     // Metodo setter per il volume

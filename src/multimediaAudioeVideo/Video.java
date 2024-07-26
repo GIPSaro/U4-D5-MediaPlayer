@@ -11,12 +11,13 @@ public class Video extends Audio {
 
     @Override
     public void play() {
+        int duration = 0;
         int printCount = duration + volume + brightness;
         String puntoEsclamativo = "!".repeat(volume);
         String asterisco = "*".repeat(brightness);
 
         //ciclo for che in base al volume, luminosità e durata stampi il titolo tot num di volte
-        
+
         for (int i = 0; i < printCount; i++) {
             System.out.println(this.mediaTitle + puntoEsclamativo + asterisco);
         }

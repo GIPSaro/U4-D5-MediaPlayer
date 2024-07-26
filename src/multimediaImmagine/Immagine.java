@@ -30,4 +30,8 @@ public class Immagine {
             this.brightness = brightness;
         }
     }
+
+    public void setTitle(String title) {
+        this.mediaTitle = title;
+    }
 }
