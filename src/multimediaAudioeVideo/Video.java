@@ -1,25 +1,45 @@
 package multimediaAudioeVideo;
 
-public class Video extends Audio {
-    private int brightness = 2; // Imposto una luminosità di default
+public class Video {
+    private String mediaTitle;
+    private int duration;
+    private int volume;
+    private int brightness; // Imposto una luminosità di default
 
-    public Video(String mediaTitle, int duration) {
-        super(mediaTitle, duration);
+    public Video(String title, int duration) {
+
+        this.mediaTitle = title;
+        this.duration = duration;
+        this.volume = 0;
+        this.brightness = 0;
+    }
+
+    public void setTitle(String title) {
+        this.mediaTitle = title;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setVolume(int volume) {
+        if (volume < 0 || volume > 5) {
+            throw new IllegalArgumentException("Volume deve essere tra 0 e 5.");
+        }
+        this.volume = volume;
     }
 
     // Metodo per stampare il video con la luminosità
 
-    @Override
+
     public void play() {
-        int duration = 0;
         int printCount = duration + volume + brightness;
         String puntoEsclamativo = "!".repeat(volume);
         String asterisco = "*".repeat(brightness);
 
-        //ciclo for che in base al volume, luminosità e durata stampi il titolo tot num di volte
-
         for (int i = 0; i < printCount; i++) {
             System.out.println(this.mediaTitle + puntoEsclamativo + asterisco);
+
         }
     }
 

@@ -70,11 +70,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Popola la playlist con media di esempio
-        playlist[0] = new Video("Video 1", 5);
-        playlist[1] = new Audio("Audio 1", 3);
-        playlist[2] = new Immagine("Immagine 1");
-        playlist[3] = new Video("Video 2", 4);
-        playlist[4] = new Audio("Audio 2", 6);
+
+        playlist[0] = new Video("Video", 5);
+        playlist[1] = new Audio("Audio", 3);
+        playlist[2] = new Immagine("Immagine");
+        playlist[3] = new Video("Video", 4);
+        playlist[4] = new Audio("Audio", 6);
 
         while (true) {
             System.out.println("Inserisci un numero da 1 a 5 per selezionare un file. Digita 0 per terminare.");
@@ -82,6 +83,7 @@ public class Main {
 
             if (selectedIndex == 0) {
                 break; // Termina il processo
+
             } else if (selectedIndex > 0 && selectedIndex <= 5) {
                 Object selectedMedia = playlist[selectedIndex - 1];
 
@@ -92,17 +94,17 @@ public class Main {
                     // Chiedi il titolo, la durata e il volume
                     System.out.println("Per favore, inserisci il titolo dell'audio:");
                     String title = scanner.nextLine();
-                    audio.setTitle(title); // Imposta il titolo dell'audio
+                    audio.setTitle(title);
 
                     System.out.println("Per favore, inserisci la durata (in minuti):");
                     int duration = Integer.parseInt(scanner.nextLine());
-                    audio.setDuration(duration); // Imposta la durata
+                    audio.setDuration(duration);
 
                     System.out.println("Per favore, inserisci il volume (0-5):");
                     int volume = Integer.parseInt(scanner.nextLine());
-                    audio.setVolume(volume); // Imposta il volume
+                    audio.setVolume(volume);
 
-                    // Stampa il risultato
+
                     audio.play();
 
                 } else if (selectedMedia instanceof Video) {
